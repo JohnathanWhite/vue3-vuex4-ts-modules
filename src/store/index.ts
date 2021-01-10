@@ -19,18 +19,18 @@ import { AppMutationTypes } from '@/store/app/mutations'
 import { AuthMutationTypes } from '@/store/auth/mutations'
 
 export type RootState = {
-  auth: AuthState;
   app: AppState;
+  auth: AuthState;
 }
 
 export const AllActionTypes = {
-  ...AppActionTypes,
-  ...AuthActionTypes
+  app: AppActionTypes,
+  auth: AuthActionTypes
 }
 
 export const AllMutationTypes = {
-  ...AppMutationTypes,
-  ...AuthMutationTypes
+  app: AppMutationTypes,
+  auth: AuthMutationTypes
 }
 
 export type Store =

@@ -1,6 +1,6 @@
 import { MutationTree } from 'vuex'
 import { AppState } from './state'
-import { TodoItem } from '@/store/app/models'
+import { TodoItem } from './models'
 
 export enum AppMutationTypes {
   SetLoading = 'SET_LOADING',

@@ -19,7 +19,7 @@ export default defineComponent({
       title: computed(() => auth.title),
       loading: computed(() => app.loading),
       todos: computed(() => app.todos),
-      startGetTodos: () => store.dispatch(AllActionTypes.StartGetTodos, undefined, { root: true })
+      startGetTodos: () => store.dispatch(AllActionTypes.app.StartGetTodos, undefined, { root: true })
     }
   }
 })

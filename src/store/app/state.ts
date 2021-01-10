@@ -1,4 +1,4 @@
-import { TodoItem } from '@/store/app/models'
+import { TodoItem } from './models'
 
 export type AppState = {
   loading: boolean;
