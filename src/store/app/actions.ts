@@ -1,15 +1,11 @@
-import { ActionContext, ActionTree } from 'vuex'
+import { ActionTree } from 'vuex'
 import { AppMutations, AppMutationTypes } from './mutations'
 import { AppState } from './state'
 import { RootState } from '@/store'
 import axios from 'axios'
+import { GenerateActionAugments } from '@/store/util'
 
-type ActionAugments = Omit<ActionContext<AppState, RootState>, 'commit'> & {
-  commit<K extends keyof AppMutations>(
-    key: K,
-    payload: Parameters<AppMutations[K]>[1]
-  ): ReturnType<AppMutations[K]>;
-}
+type ActionAugments = GenerateActionAugments<AppState, AppMutations>
 
 export enum AppActionTypes {
   StartGetTodos = 'START_GET_TODOS'
