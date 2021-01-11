@@ -14,12 +14,13 @@ export default defineComponent({
   name: 'HelloWorld',
   setup () {
     const store = useStore()
-    const { app, auth } = store.state
+    const { APP, AUTH } = store.state
+
     return {
-      title: computed(() => auth.title),
-      loading: computed(() => app.loading),
-      todos: computed(() => app.todos),
-      startGetTodos: () => store.dispatch(AllActionTypes.app.StartGetTodos, undefined, { root: true })
+      title: computed(() => AUTH.title),
+      loading: computed(() => APP.loading),
+      todos: computed(() => APP.todos),
+      startGetTodos: () => store.dispatch(AllActionTypes.APP.StartGetTodos, undefined, { root: true })
     }
   }
 })
